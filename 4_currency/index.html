@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            background-color: rgba(153, 96, 193, 0.915);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .wrapper{
+            border: none;
+            border-radius: 10px;
+            background-color: white;
+            height: 350px;
+        }
+        .form-control{
+            border: none;
+            border: 1px solid black;
+        }
+        .title{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .d-flex{
+            flex-direction: column;
+            font-size: 40px;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="card col-md-4 p-5 shadow-lg">
+        <div class="title bg-primary text-white p-3 mb-4  rounded-top-3 ">
+            <!-- <i class="fa-solid fa-right-left fa-flip"></i> -->
+            <div class="d-flex">
+                <i class="fa-solid fa-arrow-right fa-spin"></i>
+                <i class="fa-solid fa-arrow-left fa-spin"></i>
+            </div>
+            <h2>CURRENCY CONVERTER</h2>
+        </div>
+
+        <div mb-3>
+            <label>Enter Amount: </label>
+            <input type="number" class="form-control" placeholder="Enter amount" />
+        </div>
+        <br>
+        <div class="mb-3">
+            <label>From</label>
+            <select class="form-control">
+                <option>USD</option>
+                <option>IND</option>
+                <option>EUR</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>To</label>
+            <select class="form-control">
+                <option>USD</option>
+                <option>IND</option>
+                <option>EUR</option>
+            </select>
+        </div>
+
+        <div>
+            <button class="btn btn-primary mb-3">Convert</button>
+        </div>
+
+        <div>
+            <p class="text-center">1 Dollar = 8.81 Rupees</p>
+        </div>
+    </div>
+</body>
+</html>

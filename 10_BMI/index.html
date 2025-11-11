@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .card{
+            border-radius: 30px;
+            box-shadow: 2px 2px 10px black;
+        }
+        .btn{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        input::-webkit-slider-thumb {
+            background-color: orange !important;
+        }
+        input::-webkit-slider-runnable-track {
+            background-color: rgb(247, 95, 95) !important;
+        }
+
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card col-mb-4 p-5">
+        <h1 class="mb-5 text-center">Calculate Your BMI</h1>
+        <div class="mb-5">
+            <input type="range" class="form-range">
+            <label> WEIGHT: <span>60</span><span>Kg</span></label>
+        </div>
+            
+        <div class="mb-5">
+            <input type="range" class="form-range">
+            <label> HEIGHT: <span>180</span><span>Cm</span></label>
+        </div>
+
+        <button class="btn btn-warning">Calculate</button>
+        <h4 class="mt-5 text-center">Your BMI is XXX</h4>
+    </div>
+</body>
+</html>
