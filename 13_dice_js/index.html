@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgb(173, 143, 143) 50%, rgb(56, 18, 18) 50%);
+        }
+        .wrapper{
+            background-image: linear-gradient(rgb(56, 18, 18) 50%, rgb(173, 143, 143) 50%);
+            width: 1000px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 2px 2px 10px rgb(56, 52, 52)    ;
+        }
+        .col img{
+            width: 180px;
+        }
+        .wrapper .row{
+            display: flex;
+            justify-content: space-around;
+        }
+        .col p{
+            margin-top: 50px;
+            margin-bottom: 15px;
+            font-size: 50px;
+            font-weight: 550;
+            margin-bottom: 40px;
+            color: white;
+        }
+        .wrapper>p{
+            font-size:50px;
+            font-weight: 400;
+            margin: 30px;
+            margin-top: 50px;
+            padding-top: 20px;
+        }
+        button{
+            margin-top: 15px;
+            margin-bottom: 40px;
+            padding: 30px 50px;
+            border-radius: 10px;
+            border: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col">
+                <p>Player 1</p>
+                <img src="1.svg" id="p1">
+            </div>
+
+            <div class="col">
+                <p>Player 2</p>
+                <img src="2.svg" id="p2">
+            </div>
+        </div>
+        <p id="result">Let the Game Begin🚀</p>
+        <button onclick="roll()">Roll Dice</button>
+    </div>
+    
+    <script>
+        function roll(){
+            var p1 = document.getElementById("p1");
+            var p2 = document.getElementById("p2");
+            var result = document.getElementById("result");
+
+            var player1 = parseInt(Math.random()*6)+1;
+            var player2 = parseInt(Math.random()*6)+1;
+
+            p1.src = player1 + ".svg";
+            p2.src = player2 + ".svg";
+
+            if (p1>p2){
+                result.textContent = "Player 1 Wins🏆";
+            }
+            else if(p1<p2){
+                result.textContent = "Player 2 Wins🏆";
+            }
+            else{
+                result.textContent = "🏆Match Draw🏆";
+            }
+        }
+    </script>
+</body>
+</html>

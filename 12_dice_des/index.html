@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(238, 130, 238, 0.566);
+            font-size: 100px;
+        }
+        .wrapper{
+            text-align: center;
+            background-color: rgba(60, 83, 107, 0.738);
+            height: fit-content;
+            width: 700px;
+            padding: 20px;
+            padding-left: 50px;
+            padding-right: 50px;
+            color: white;
+            border-radius: 15px;
+        }
+        .dice-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+        .dice{
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            margin-top: 10px;
+            height: 70px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Roll The Dice</h1>
+        <button id="roll-button" class="btn btn-danger">Roll Dice</button>
+        <div class="dice-container">
+            <div class="dice" id="dice-1">1</div>
+            <div class="dice" id="dice-2">1</div>
+        </div>
+        <h2 id="result">Result:</h2>
+    </div>
+</body>
+<script>
+    const rollButton = document.getElementById('roll-button');
+    const dice1 = document.getElementById('dice-1');\
+
+    var rnd = new Random();
+    const dice2 = document.getElementById('dice-2');
+    const result = document.getElementById('result');
+</script>
+</html>

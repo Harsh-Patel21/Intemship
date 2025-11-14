@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=M+PLUS+Rounded+1c:wght@400;800&family=Merienda:wght@300..900&family=Permanent+Marker&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+</style>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            font-family: "Tomorrow", sans-serif;
+        }
+        .wrapper{
+            padding: 65px;
+            background-color: yellow;
+        }
+        h1{
+            font-size: 180px;
+            padding: 40px;
+            color: white;
+            border-radius: 10px;
+            background-color: black;
+            text-shadow: 0 0 10px gold;
+            width: 1200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 id="clock"></h1>
+    </div>
+
+    <script>
+        setInterval(function(){
+        var date = new Date();
+        var time = date.toLocaleTimeString()
+        var clock = document.getElementById("clock")
+        clock.textContent = time
+        },1000)
+    </script>
+</body>
+</html>
