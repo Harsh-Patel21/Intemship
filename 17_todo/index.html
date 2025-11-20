@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(61, 10, 108);
+        }
+        .navbar{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            top: 0;
+            position: fixed;
+        }
+        .container{
+            position: absolute;
+            top: 220px;
+        }
+        .title{
+            border-radius: 10px;
+            font-size: 70px;
+            font-weight: 700;
+            margin-top: 60px;
+            color: rgb(255, 254, 238);
+        }
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .text{
+            font-size: 18px;
+            padding: 5px;
+            border: 2px solid white;
+            border-radius: 5px;
+            border-top: none;
+            border-right: none;
+            background-color: transparent;
+            color: white;
+        }
+        input{
+            width: 400px;
+            outline: none;
+        }
+        input::placeholder{
+            color: white;
+            font-weight: 600;
+        }
+        .add{
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: rgb(176, 110, 230);
+            color: white;
+            width: 100px;
+            height: 40px;
+        }
+        .add:hover{
+            background-color: rgb(140, 80, 189);
+        }
+        .v{
+            text-align: center;
+            margin-top: 30px;
+            font-size: 25px;
+            color: antiquewhite;
+            background-color: rgb(176, 120, 229);
+            border-radius: 10px;
+        }
+        .z{
+            overflow: scroll;
+            scrollbar-width: none;
+            height: 250px;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 25px;
+            color: antiquewhite;
+            background-color: rgb(176, 120, 229);
+        }
+        .your{
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .exist{
+            background-color: rgb(235, 163, 255);
+            color: black;
+            text-align: center;
+            font-size: 30px;
+            height: 50px;
+            width: 400px;
+            margin-top: 10px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 10px;
+        }
+        .fa-solid{
+            margin-right: 10px;
+            padding-left: 10px;
+            border-left: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span class="title">ToDO List</span>
+    </div>
+    
+    <div class="container">
+        <div class="wrapper">
+            <input type="text" id="title" class="text" placeholder="Enter you ToDo...">
+            <button onclick="addtodo()" class="add">ADD</button>
+        </div>
+    
+        <div class="v">
+                <h3 class="your">Your ToDos</h3>
+        </div>
+    
+        <div class="z" id="list">
+
+        </div>
+    </div>
+    <script>
+        let title = document.getElementById("title")
+        let list = document.getElementById("list")
+
+        function addtodo(){
+            let html = `<p class="exist">${title.value}<i class="fa-solid fa-trash" onclick="deletetodo(event)"></i></p>`
+            list.innerHTML = list.innerHTML + html
+            title.innerText = ""
+        }
+
+        function deletetodo(e){
+            console.log(e.target)
+            e.target.parentElement.remove()
+    }
+
+    </script>
+</body>
+</html>
