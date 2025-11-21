@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(105deg,black 25%,white 20%);
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .title{
+            font-size: 50px;
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+        #word{
+            width: 400px;
+            height: 150px;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 18px;
+        }
+        .btn{
+            border: none;
+        }
+        button{
+            background-color: black;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            margin: 20px;
+            padding: 10px;
+            border-radius: 7px;
+        }
+        #result{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <p>
+                Word count
+            </p>
+        </div>
+        <div class="text">
+            <textarea id="word" placeholder="Enter Your Words..."></textarea>
+        </div>
+        <div class="btn">
+            <button onclick="generate()">Count Words</button>
+        </div>
+        <div class="result">
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        var result = document.getElementById("result");
+        var word = document.getElementById("word");
+        
+        function generate(){
+            a = word.value
+            result.innerText = "No. of Words are: " + a.length
+        }
+    </script>
+</body>
+</html>

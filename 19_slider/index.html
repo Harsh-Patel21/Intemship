@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+        }
+
+        #mainimg{
+            background-image: url("sea1.jpg");
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            transition: 0.3s ease-in-out;
+        }
+        .imggroup{
+            position: absolute;
+            left: 45%;
+            bottom: 40%;
+            transform: translateY(50%);
+        }
+        img{
+            height: 300px;
+            width: 250px;
+            margin-right: 20px;
+            border-radius: 20px;
+            transition: 0.3s ease-in-out;
+        }
+        img:hover{
+            height: 320px;
+            width: 270px;
+        }
+        .buttons{
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .fa-solid{
+            font-size: 60px;
+            border-radius: 100px;
+            border: none;
+            background-color: transparent;
+        }
+        .fa-solid:hover{
+            font-size: 65px;
+            color: rgba(0, 0, 0, 0.914);
+            transition: 0.5 ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainimg">
+    </div>
+
+    <div class="imggroup">
+        <img src="sea2.jpg" onclick="setimg('sea2.jpg')">
+        <img src="sea3.jpg" onclick="setimg('sea3.jpg')">
+        <img src="sea1.jpg" onclick="setimg('sea1.jpg')">
+    </div>
+
+    <div class="buttons">
+        <i onclick="backward()" class="fa-solid fa-circle-chevron-left"></i>
+        <i onclick="forward()" class="fa-solid fa-circle-chevron-right"></i>
+    </div>
+
+    <script>
+        var i0 = document.getElementById("mainimg")
+
+        function setimg(image){
+            i0.style.backgroundImage = `url('${image}')`
+        }
+        let images = ["sea1.jpg","sea2.jpg","sea3.jpg"]
+        let i = 0
+
+        setInterval(function(){
+            i0.style.backgroundImage = `url('${images[i]}')`;
+            i = i + 1
+            if (i == 3){
+                i = 0
+            }
+        }, 3000)
+        
+        function backward() {
+    i = i - 1;
+    if (i < 0) i = images.length - 1;
+    i0.style.backgroundImage = `url('${images[i]}')`;
+}
+
+function forward() {
+    i = i + 1;
+    if (i >= images.length) i = 0;
+    i0.style.backgroundImage = `url('${images[i]}')`;
+}
+
+
+        // function backward(){
+        //     i0.src = images[i]
+        //     i = i - i
+
+        //     if(i === 1){
+        //         i = 0
+        //     }
+        // }
+        // function forward(){
+        //     i0.src = images[i]
+        //     i = i + i
+
+        //     if(i === 3){
+        //         i = 0
+        //     }
+        // }
+
+        // function forward(){
+        //     if (i===i1){
+        //     i.src = img2
+        //     }
+        //     else if (i===i2){
+        //     i.style.backgroundImage=`URL("${img3}")`
+        //     }
+        //     else if (i===i3){
+        //     i.style.backgroundImage=`URL("${img1}")`
+        //     }
+        // }
+        // function backward(){
+        //     if (i===i1){
+        //     i.style.backgroundImage=`URL("${img3}")`
+        //     }
+        //     else if (i===i2){
+        //     i.style.backgroundImage=`URL("${img1}")`
+        //     }
+        //     else if (i===i3){
+        //     i.style.backgroundImage=`URL("${img2}")`
+        //     }
+        // }
+    </script>
+</body>
+</html>
